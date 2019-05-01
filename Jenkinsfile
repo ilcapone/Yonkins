@@ -14,6 +14,7 @@ stages {
       steps {
          sh 'pwd'
       }
+	}
    stage('Test') {
       steps {
           sh 'ifconfig'
