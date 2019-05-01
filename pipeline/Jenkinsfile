@@ -1,25 +1,8 @@
-pipleline{
-
-	agent {
-	  docker {
-	   image 'ilcapone/hack-container:v01'
-	   args '-p 443:443'
-	  }
-	}
-
-	environment {
-	  CI = 'true'
-	}
-
+pipeline{
 	stages {
-	   stage('Build') {
+	   stage('Run') {
 		  steps {
-			 sh 'pwd'
-		  }
-		}
-	   stage('Test') {
-		  steps {
-			  sh 'ifconfig'
+			 sh 'docker run ilcapone/hack-container:v01 -p 443:443'
 		  }
 		}
 	}

@@ -1,5 +1,4 @@
-pipleline{
-
+pipeline{
 	stages {
 	   stage('Run') {
 		  steps {
