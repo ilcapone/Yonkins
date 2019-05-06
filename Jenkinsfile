@@ -3,7 +3,7 @@ pipeline{
 	stages {
 	   stage('Run') {
 		  steps {
-			 sh 'docker run ilcapone/hack-container:v01 -p 443:443'
+			 sh 'docker run -p 443:443 ilcapone/hack-container:v01'
 		  }
 		}
 	}
