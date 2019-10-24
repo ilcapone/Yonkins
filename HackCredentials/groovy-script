@@ -5,3 +5,12 @@ pasword = com.cloudbees.plugins.credentials.SecretBytes.fromString(hashed_pw)
 data = com.cloudbees.plugins.credentials.SecretBytes.getPlainData(pasword)
 String text = new String(data)
 println(text)
+
+
+/* This script Decrypt all the comon paswords and secrets keys in credentials.xml */
+com.cloudbees.plugins.credentials.SystemCredentialsProvider.getInstance().getCredentials().forEach{
+  it.properties.each { prop, val ->
+    println(prop + ' = "' + val + '"')
+  }
+  println("-----------------------")
+}
